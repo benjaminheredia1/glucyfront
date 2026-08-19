@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom'
-import { ClipboardList, CreditCard, FileCheck2, LayoutGrid, LogOut, Users } from 'lucide-react'
+import { ClipboardList, CreditCard, FileCheck2, LayoutGrid, LogOut, UserCog, Users } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 import { useAuth } from '@/auth/AuthContext'
 import { seccionesDe, type Seccion } from '@/auth/roles'
@@ -12,6 +12,7 @@ const NAVEGACION: { seccion: Seccion; ruta: string; etiqueta: string; Icono: Luc
   { seccion: 'pacientes', ruta: '/pacientes', etiqueta: 'Pacientes', Icono: Users },
   { seccion: 'estudios', ruta: '/estudios', etiqueta: 'Estudios', Icono: FileCheck2 },
   { seccion: 'licencias', ruta: '/licencias', etiqueta: 'Licencias', Icono: CreditCard },
+  { seccion: 'usuarios', ruta: '/usuarios', etiqueta: 'Usuarios', Icono: UserCog },
 ]
 
 const ETIQUETA_ROL: Record<string, string> = {

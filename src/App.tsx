@@ -8,6 +8,7 @@ import { Licencias } from '@/paginas/Licencias'
 import { Login } from '@/paginas/Login'
 import { Pacientes } from '@/paginas/Pacientes'
 import { SinAcceso } from '@/paginas/SinAcceso'
+import { Usuarios } from '@/paginas/Usuarios'
 
 export default function App() {
   return (
@@ -60,6 +61,14 @@ export default function App() {
           element={
             <RequiereRol seccion="licencias">
               <Licencias />
+            </RequiereRol>
+          }
+        />
+        <Route
+          path="/usuarios"
+          element={
+            <RequiereRol seccion="usuarios">
+              <Usuarios />
             </RequiereRol>
           }
         />

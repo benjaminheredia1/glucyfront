@@ -1,6 +1,6 @@
 import { Badge } from '@/components/ui/badge'
 import { cn } from '@/lib/utils'
-import type { Clinica, EstadoEstudio } from '@/lib/tipos'
+import type { Clinica, EstadoEstudio, Rol } from '@/lib/tipos'
 import type { EstadoLicencia } from '@/lib/formato'
 
 // Tintes de estado del brand kit: salud #2EE6A8, warn #E8A33D, alert #E8574B.
@@ -55,4 +55,20 @@ export function InsigniaEstudio({ estado }: { estado: EstadoEstudio }) {
           : TINTES.neutro
 
   return <Badge className={cn('font-medium', tinte)}>{ETIQUETA_ESTUDIO[estado]}</Badge>
+}
+
+const ETIQUETA_ROL: Record<Rol, string> = {
+  admin: 'Administrador',
+  doctor: 'Doctor',
+  paciente: 'Paciente',
+}
+
+const TINTE_ROL: Record<Rol, string> = {
+  admin: 'border-transparent bg-[#E4E6FB] text-[#3B3F8C] dark:bg-[#2B2E5C] dark:text-[#B9BDF5]',
+  doctor: TINTES.positivo,
+  paciente: TINTES.neutro,
+}
+
+export function InsigniaRol({ rol }: { rol: Rol }) {
+  return <Badge className={cn('font-medium', TINTE_ROL[rol])}>{ETIQUETA_ROL[rol]}</Badge>
 }

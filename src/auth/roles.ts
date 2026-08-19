@@ -1,11 +1,11 @@
 import type { Rol } from '@/lib/tipos'
 
-export type Seccion = 'dashboard' | 'clinicas' | 'pacientes' | 'estudios' | 'licencias'
+export type Seccion = 'dashboard' | 'clinicas' | 'pacientes' | 'estudios' | 'licencias' | 'usuarios'
 
 // El backend re-verifica cada peticion con Alcance; esto solo decide que
 // pantallas se ofrecen. Un rol paciente no opera el panel: usa la app movil.
 const PERMISOS: Record<Rol, Seccion[]> = {
-  admin: ['dashboard', 'clinicas', 'pacientes', 'estudios', 'licencias'],
+  admin: ['dashboard', 'clinicas', 'pacientes', 'estudios', 'licencias', 'usuarios'],
   doctor: ['dashboard', 'pacientes', 'estudios'],
   paciente: [],
 }
